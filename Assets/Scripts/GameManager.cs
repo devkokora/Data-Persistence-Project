@@ -32,14 +32,14 @@ public class GameManager : MonoBehaviour
     class SaveData
     {
         public string HighScoreName;
-        public int highScore;
+        public int HighScore;
     }
 
     public void SaveScore()
     {
         SaveData data = new SaveData();
         data.HighScoreName = highScoreName;
-        data.highScore = highScore;
+        data.HighScore = highScore;
 
         string json = JsonUtility.ToJson(data);
 
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 
             highScoreName = data.HighScoreName;
-            highScore = data.highScore;
+            highScore = data.HighScore;
         }
     }
 }
